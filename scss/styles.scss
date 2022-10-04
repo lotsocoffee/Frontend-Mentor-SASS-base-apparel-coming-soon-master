@@ -1,0 +1,80 @@
+@use 'variables';
+@use 'initial-setup';
+@use 'mixins';
+@use 'footer';
+
+.container{
+    width: 375px;
+    height: 800px;
+    margin: 0 auto 80px;
+    background-color: variables.$Gradient-2;
+    &__logo{
+        width: 100px;
+        margin: 30px;
+    }
+    &__picture{
+        margin-bottom: 60px;
+    }
+    &__content{
+        &__title{
+            text-align: center;
+            text-transform: uppercase;
+            font-size: 2.5em;
+            color: variables.$Dark-Grayish-Red;
+            font-weight: 700;
+            letter-spacing: 11px;
+            margin-bottom: 30px;
+        }
+        &__title--color-red{
+            color: variables.$Desaturated-Red;
+            font-weight: 300;
+        }
+        &__description{
+            margin: 0 40px 40px;
+            text-align: center;
+            font-size: 0.85em;
+            line-height: 1.4em;
+        }
+        &__form{
+            width: 310px;
+            height: 50px;
+            margin: 0 auto;
+            position: relative;
+        }
+        &__form__email{
+            width: 100%;
+            height: 100%;
+            border-radius: 50px;
+            padding-left: 16px;
+            border: 1px solid variables.$Desaturated-Red;
+            outline: none;
+            /* background-image: url(./images/icon-error.svg); */
+            background-repeat: no-repeat;
+            background-position: 210px 12px;
+        }
+        &__form__email::placeholder{
+            color: variables.$Desaturated-Red;
+        }
+        &__form__button{
+            width: 68px;
+            height: 52px;
+            position: absolute;
+            right: 0;
+            top: -1px;
+            border-radius: 50px;
+            background: linear-gradient(135deg, variables.$Gradient-3, variables.$Gradient-4);
+            padding: 14px 25px;
+        }
+        &__form__button:hover{
+            cursor: pointer;
+            background: linear-gradient(135deg, variables.$Gradient-2, variables.$Gradient-4);
+            box-shadow: 0 10px 15px variables.$Gradient-4;
+        }
+        &__form__email--error{
+            font-size: 0.85em;
+            margin: 8px 0 0 14px;
+            color: variables.$Soft-Red;
+        }
+    }    
+    @include mixins.desktop;
+}    
